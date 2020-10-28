@@ -1,8 +1,3 @@
 import React from 'react';
 
-
-export const NotFound = () => (
-    <div>
-       No encontrado
-    </div>
-)
+export const NotFound = () => <div>No encontrado</div>;

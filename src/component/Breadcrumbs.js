@@ -1,7 +1,3 @@
 import React from 'react';
 
-
-export const Breadcrumbs = () => (
-    <div>Breadcrumbs</div>
-)
-
+export const Breadcrumbs = () => <div>Breadcrumbs</div>;
