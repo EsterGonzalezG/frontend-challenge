@@ -1,0 +1,11 @@
+{
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "insert"
+},
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true
+
+}
