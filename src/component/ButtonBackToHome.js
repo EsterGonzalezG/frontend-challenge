@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const ButtonBackToHome = () => (
+export const ButtonBackToHome = ({ children }) => (
   <Link className='' to='/'>
-    Volver a la lista de móviles
+    {children}
   </Link>
 );
