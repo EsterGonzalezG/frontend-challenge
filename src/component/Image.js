@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Image = ({ item }) => (
-  <img loading='lazy' className='l-marginBottom-16' src={item.imgUrl} alt={item.title} />
+export const Image = (props) => (
+  <img loading='lazy' className='l-marginBottom-16' src={props.item.imgUrl} alt={props.item.title} />
 );
 
 Image.prototype = {

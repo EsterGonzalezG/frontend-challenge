@@ -1,10 +1,8 @@
-import './styles/App.scss';
-import { Switch, Route } from 'react-router-dom';
-
+import { Route, Switch } from 'react-router-dom';
 import { Home } from './pages/Home';
-import { ProductDetails } from './pages/ProductDetails';
 import { NotFound } from './pages/NotFound';
-import { Header } from './component/Header';
+import { ProductDetails } from './pages/ProductDetails';
+import './styles/App.scss';
 
 function App() {
   return (

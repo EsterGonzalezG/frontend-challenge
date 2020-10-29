@@ -7,16 +7,16 @@ export const ItemList = ({ list }) => {
   const [valueSearch, setValueSearch] = useState('');
   if (list !== undefined) {
     return (
-      <div className='l-content-wide'>
+      <div className='itemList l-content-wide'>
         <Search setValueSearch={setValueSearch} />
-        <ul className='itemList'>
+        <ul className='itemList-list'>
           {list
             .filter(
               (product) =>
                 product.brand.toLowerCase().includes(valueSearch) || product.model.toLowerCase().includes(valueSearch),
             )
-            .map((product) => (
-              <li key={product.id} className='Card l-marginBottom-24 l-paddingY-24'>
+            .map((product, index) => (
+              <li key={index} className='Card l-marginBottom-24 l-paddingY-24'>
                 <Link to={`/detail/${product.id}`}>
                   <div className='itemList-element'>
                     <Image item={product} />
