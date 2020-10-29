@@ -1,7 +1,6 @@
 import React from 'react';
-
+import { Header } from '../component/Header';
 import { ItemList } from '../component/ItemList';
-import { Search } from '../component/Search';
 import { localStorageList } from '../utils/localStorage';
 
 export const Home = () => {
@@ -9,7 +8,7 @@ export const Home = () => {
 
   return (
     <div>
-      <Search />
+      <Header />
       <ItemList list={JSON.parse(list)} />
     </div>
   );

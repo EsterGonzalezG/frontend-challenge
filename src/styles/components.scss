@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+.Card {
+  border-radius: 6px;
+  background-color: $white;
+  box-shadow: 0 8px 24px rgba(56, 54, 65, 0.1), 0 1px 0 rgba(56, 54, 65, 0.1);
+}
+
+.Input {
+  border-right: 0;
+  border-top: 0;
+  border-left: 0;
+  border-bottom-color: $softViolet;
+  width: 442px;
+  margin: 0 10px;
+}

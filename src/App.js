@@ -9,7 +9,6 @@ import { Header } from './component/Header';
 function App() {
   return (
     <div>
-      <Header />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/detail/:mobileId' component={ProductDetails} />

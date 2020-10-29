@@ -1,24 +1,22 @@
-.Card {
-   border-radius: 6px;
-   background-color: white;
-   box-shadow:0 8px 24px rgba(56,54,65,.1), 0 1px 0 rgba(56,54,65,.1) ;
-}
-
-
 .l-paddingY-24 {
-    padding: 24px;
+  padding: 24px;
 }
 
 .l-marginBottom-24 {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .l-marginBottom-16 {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .l-content-wide {
-    max-width: 1064px;
-    padding: 0 16px;
-    margin: 0 auto;
+  max-width: 1064px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.l-flex-justifyEnd {
+  display: flex;
+  justify-content: flex-end;
 }
