@@ -3,7 +3,7 @@ const addCart = 'https://front-test-api.herokuapp.com/api/cart';
 export const addProducts = (add) => {
   return fetch(addCart, {
     method: 'POST',
-    body: JSON.stringifys(add),
+    body: JSON.stringify(add),
     headers: {
       'Content-Type': 'application/json',
     },

@@ -9,7 +9,6 @@ export const ItemList = ({ list }) => {
   const [phones, setPhones] = useState([]);
 
   useEffect(() => {
-    console.log(list);
     setPhones(list);
   }, [list]);
 

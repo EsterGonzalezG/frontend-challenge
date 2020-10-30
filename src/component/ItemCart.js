@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const ItemCard = () => (
+export const ItemCard = ({ cart }) => (
   <div className='header-itemCart'>
-    <p>numero de items carrito</p>
+    <p>{cart}</p>
   </div>
 );
