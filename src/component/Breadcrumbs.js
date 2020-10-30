@@ -7,6 +7,7 @@ export const Breadcrumbs = () => {
     home: [{ label: 'Home', path: '/' }],
     details: [{ label: 'Home', path: '/' }, { label: 'Detalle del producto' }],
   };
+
   function crumb() {
     if (location.pathname === '/') {
       return renderCrumb(config.home);
@@ -14,15 +15,14 @@ export const Breadcrumbs = () => {
       return renderCrumb(config.details);
     }
   }
+
   function renderCrumb(option) {
     return option.map((item, index) => {
       return option.length - 1 === index ? (
         <li key={index}>{item.label}</li>
       ) : (
-        <li>
-          <Link to={item.path} key={index}>
-            {item.label}
-          </Link>
+        <li key={index}>
+          <Link to={item.path}>{item.label}</Link>
           {' > '}
         </li>
       );

@@ -1,31 +1,39 @@
 import { getProductList } from '../services/getProducts';
 
 function getLocalStorage(name) {
-  return localStorage.getItem(name);
+  return JSON.parse(localStorage.getItem(name));
 }
 
 function setLocalStorage(name, data) {
   return localStorage.setItem(name, JSON.stringify(data));
 }
 
-export const localStorageList = () => {
+function getExpirationDate() {
+  const oneHour = 3600 * 1000;
+  return Date.now() + oneHour;
+}
+
+async function cacheData() {
+  const products = await getProductList();
+  setLocalStorage('list', products);
+  setLocalStorage('time', getExpirationDate());
+  return products;
+}
+
+export const localStorageList = async () => {
   const now = Date.now();
   const requestHours = parseInt(getLocalStorage('time'));
-  const requestHoursTimeOut = requestHours + 3600;
+  const storedList = getLocalStorage('list');
+  let dataToReturn;
 
-  if (localStorage.getItem('list')) {
-    if (now <= requestHoursTimeOut) {
-      getProductList().then((data) => {
-        localStorage.setItem('list', data);
-      });
-      setLocalStorage('time', now);
+  if (storedList) {
+    if (now > requestHours) {
+      dataToReturn = await cacheData();
+    } else {
+      dataToReturn = storedList;
     }
   } else {
-    getProductList().then((data) => {
-      console.log(JSON.stringify(data));
-      setLocalStorage('list', data);
-    });
-    setLocalStorage('time', now);
+    dataToReturn = await cacheData();
   }
-  return getLocalStorage('list');
+  return dataToReturn;
 };

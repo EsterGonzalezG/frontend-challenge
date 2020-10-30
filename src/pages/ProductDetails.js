@@ -10,7 +10,7 @@ import { getProductId } from '../services/getProducts';
 export const ProductDetails = () => {
   const id = useParams();
   const isMountedRef = useRef(null);
-  const [productDetail, setProductDetail] = useState([]);
+  const [productDetail, setProductDetail] = useState({});
   const [color, setColor] = useState('');
   const [storage, setStorage] = useState('');
   const [cart, setCart] = useState('');
