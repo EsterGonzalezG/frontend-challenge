@@ -26,12 +26,8 @@ export const localStorageList = async () => {
   const storedList = getLocalStorage('list');
   let dataToReturn;
 
-  if (storedList) {
-    if (now > requestHours) {
-      dataToReturn = await cacheData();
-    } else {
-      dataToReturn = storedList;
-    }
+  if (storedList && now < requestHours) {
+    dataToReturn = storedList;
   } else {
     dataToReturn = await cacheData();
   }
