@@ -1,11 +1,19 @@
 import { getProductList } from '../services/getProducts';
 
-function getLocalStorage(name) {
-  return JSON.parse(localStorage.getItem(name));
+function getLocalStorage(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key));
+  } catch (error) {
+    throw error;
+  }
 }
 
-function setLocalStorage(name, data) {
-  return localStorage.setItem(name, JSON.stringify(data));
+function setLocalStorage(key, initialValue) {
+  try {
+    return localStorage.setItem(key, JSON.stringify(initialValue));
+  } catch (error) {
+    throw error;
+  }
 }
 
 function getExpirationDate() {

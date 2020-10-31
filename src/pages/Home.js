@@ -5,7 +5,7 @@ import { Header } from './../component/Header';
 import { getSessionStorage } from './../utils/sessionStorage';
 
 export const Home = () => {
-  const countExist = getSessionStorage('cart');
+  const cartItems = getSessionStorage('cart');
   const [list, setList] = useState([]);
   const isMountedRef = useRef(null);
 
@@ -22,7 +22,7 @@ export const Home = () => {
 
   return (
     <div>
-      <Header cart={countExist} />
+      <Header cart={cartItems} />
       <ItemList list={list} />
     </div>
   );

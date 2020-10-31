@@ -1,14 +1,14 @@
-export const getSessionStorage = (name) => {
+export const getSessionStorage = (key) => {
   try {
-    return sessionStorage.getItem(name);
+    return sessionStorage.getItem(key);
   } catch (error) {
     throw error;
   }
 };
 
-export const setSessionStorage = (name, cartItems) => {
+export const setSessionStorage = (key, initialValue) => {
   try {
-    return sessionStorage.setItem(name, cartItems);
+    return sessionStorage.setItem(key, initialValue);
   } catch (error) {
     throw error;
   }

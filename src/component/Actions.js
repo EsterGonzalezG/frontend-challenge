@@ -9,14 +9,12 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
   }, [setColor, setStorage, product]);
 
   return (
-    <div>
-      {
-        <form>
-          <Select options={product?.options?.colors} name='Color' setOptionsValue={setColor} />
-          <Select options={product?.options?.storages} name='Almacenamiento' setOptionsValue={setStorage} />
-        </form>
-      }
-      <button onClick={addProductCart}>Añadir</button>
-    </div>
+    <form>
+      <Select options={product?.options?.colors} name='Color' setOptionsValue={setColor} />
+      <Select options={product?.options?.storages} name='Almacenamiento' setOptionsValue={setStorage} />
+      <button type='button' onClick={addProductCart}>
+        Añadir
+      </button>
+    </form>
   );
 };
