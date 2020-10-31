@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 export const Description = ({ description }) => {
   return (
@@ -21,16 +21,18 @@ export const Description = ({ description }) => {
 };
 
 Description.prototype = {
-  brand: PropTypes.string,
-  model: PropTypes.string,
-  price: PropTypes.string,
-  cpu: PropTypes.string,
-  ram: PropTypes.string,
-  os: PropTypes.string,
-  displayResolution: PropTypes.string,
-  battery: PropTypes.string,
-  primaryCamera: PropTypes.string,
-  secondaryCmera: PropTypes.string,
-  dimentions: PropTypes.string,
-  weight: PropTypes.string,
+  description: PropTypes.shape({
+    brand: PropTypes.string,
+    model: PropTypes.string,
+    price: PropTypes.string,
+    cpu: PropTypes.string,
+    ram: PropTypes.string,
+    os: PropTypes.string,
+    displayResolution: PropTypes.string,
+    battery: PropTypes.string,
+    primaryCamera: PropTypes.string,
+    secondaryCmera: PropTypes.string,
+    dimentions: PropTypes.string,
+    weight: PropTypes.string,
+  }).isRequired,
 };

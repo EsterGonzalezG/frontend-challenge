@@ -15,5 +15,5 @@ export const Search = ({ setValueSearch }) => {
 };
 
 Search.prototype = {
-  setValueSearch: PropTypes.function,
+  setValueSearch: PropTypes.func.isRequired,
 };

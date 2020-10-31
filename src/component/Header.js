@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import React from 'react';
 import { Breadcrumbs } from './Breadcrumbs';
 import { ItemCard } from './ItemCart';
@@ -11,6 +12,10 @@ export const Header = ({ breadcrumbs, cart }) => (
         <ItemCard cart={cart} />
       </div>
     </div>
-    <Breadcrumbs crumbs={breadcrumbs} />
+    <Breadcrumbs />
   </div>
 );
+
+Header.prototype = {
+  cart: PropTypes.number,
+};

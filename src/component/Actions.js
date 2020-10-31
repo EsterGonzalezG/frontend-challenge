@@ -1,5 +1,7 @@
+import { PropTypes } from 'prop-types';
 import React, { useEffect } from 'react';
 import { Select } from './Select';
+
 export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
   useEffect(() => {
     if (Object.keys(product).length) {
@@ -17,4 +19,16 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
       </button>
     </form>
   );
+};
+
+Actions.prototype = {
+  product: PropTypes.shape({
+    options: PropTypes.shape({
+      colors: PropTypes.array,
+      storages: PropTypes.array,
+    }),
+  }),
+  setColor: PropTypes.func,
+  setStorage: PropTypes.func,
+  addProductCart: PropTypes.func,
 };

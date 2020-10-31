@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import React from 'react';
 
 export const ItemCard = ({ cart }) => (
@@ -5,3 +6,6 @@ export const ItemCard = ({ cart }) => (
     <p>{cart}</p>
   </div>
 );
+ItemCard.prototype = {
+  cart: PropTypes.number,
+};

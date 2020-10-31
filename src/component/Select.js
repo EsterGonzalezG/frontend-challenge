@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 export const Select = ({ options, name, setOptionsValue }) => (
   <div className=''>
@@ -17,3 +18,9 @@ export const Select = ({ options, name, setOptionsValue }) => (
     </select>
   </div>
 );
+
+Select.prototype = {
+  options: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  setOptionsValue: PropTypes.func.isRequired,
+};
