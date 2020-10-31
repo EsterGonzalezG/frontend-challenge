@@ -9,7 +9,7 @@ import { getProductId } from '../services/getProducts';
 import { Header } from './../component/Header';
 import { getSessionStorage, setSessionStorage } from './../utils/sessionStorage';
 
-export const ProductDetails = () => {
+const ProductDetails = () => {
   const id = useParams().mobileId;
   const isMountedRef = useRef(null);
   const [productDetail, setProductDetail] = useState({});
@@ -47,3 +47,4 @@ export const ProductDetails = () => {
     </div>
   );
 };
+export default ProductDetails;
