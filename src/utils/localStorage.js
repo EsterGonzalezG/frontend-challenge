@@ -16,13 +16,13 @@ function getExpirationDate() {
 async function cacheData() {
   const products = await getProductList();
   setLocalStorage('list', products);
-  setLocalStorage('time', getExpirationDate());
+  setLocalStorage('expired', getExpirationDate());
   return products;
 }
 
 export const localStorageList = async () => {
-  const now = Date.now();
-  const requestHours = parseInt(getLocalStorage('time'));
+  const now = Date.now(); //milliseconds
+  const requestHours = parseInt(getLocalStorage('expired'));
   const storedList = getLocalStorage('list');
   let dataToReturn;
 

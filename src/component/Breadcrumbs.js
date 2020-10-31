@@ -30,7 +30,7 @@ export const Breadcrumbs = () => {
   }
 
   return (
-    <nav className='l-marginBottom-24 l-marginTop-120'>
+    <nav>
       <ul>{crumb()}</ul>
     </nav>
   );

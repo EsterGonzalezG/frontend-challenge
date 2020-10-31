@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom';
 import { Actions } from '../component/Actions';
 import { ButtonBackToHome } from '../component/ButtonBackToHome';
 import { Description } from '../component/Description';
-import { Header } from '../component/Header';
 import { Image } from '../component/Image';
 import { addProducts } from '../services/addProducts';
 import { getProductId } from '../services/getProducts';
+import { Header } from './../component/Header';
+import { getSessionStorage, setSessionStorage } from './../utils/sessionStorage';
 
 export const ProductDetails = () => {
   const id = useParams().mobileId;
@@ -14,7 +15,7 @@ export const ProductDetails = () => {
   const [productDetail, setProductDetail] = useState({});
   const [colorCode, setColor] = useState('');
   const [storageCode, setStorage] = useState('');
-  const [cart, setCart] = useState('');
+  const [cart, setCart] = useState(() => (getSessionStorage('cart') ? parseInt(getSessionStorage('cart')) : null));
 
   useEffect(() => {
     isMountedRef.current = true;
@@ -23,12 +24,16 @@ export const ProductDetails = () => {
         setProductDetail(data);
       }
     });
+
     return () => (isMountedRef.current = false);
-  }, [id]);
+  }, [id, cart]);
 
   const addProductCart = () => {
     addProducts({ id, colorCode, storageCode }).then((data) => {
-      return setCart(data?.count);
+      setCart((current) => {
+        setSessionStorage('cart', current + data?.count);
+        return current + data?.count;
+      });
     });
   };
 
