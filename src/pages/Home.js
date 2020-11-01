@@ -21,7 +21,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className='l-marginTop-200'>
       <Header cart={cartItems} />
       <ItemList list={list} />
     </div>

@@ -38,7 +38,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className='productDetails'>
+    <div className='l-marginTop-200 productDetails'>
       <Header cart={cart} />
       <ButtonBackToHome>Volver Home </ButtonBackToHome>
       <Image item={productDetail} />

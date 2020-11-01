@@ -4,7 +4,7 @@ import { Breadcrumbs } from './Breadcrumbs';
 import { ItemCard } from './ItemCart';
 import { Title } from './Title';
 
-export const Header = ({ breadcrumbs, cart }) => (
+export const Header = ({ cart }) => (
   <div className='header'>
     <div className='l-marginBottom-24'>
       <div className='header-content'>
