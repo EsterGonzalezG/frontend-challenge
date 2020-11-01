@@ -26,7 +26,7 @@ export const ItemList = ({ list }) => {
               <li key={index} className='Card l-marginBottom-24 l-paddingY-24'>
                 <Link to={`/detail/${product.id}`}>
                   <div className='itemList-element'>
-                    <Image item={product} />
+                    <Image image={product.imgUrl} />
                     <div>
                       {product.brand}
                       {product.model}

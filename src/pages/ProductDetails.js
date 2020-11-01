@@ -41,7 +41,7 @@ const ProductDetails = () => {
     <div className='l-marginTop-200 productDetails'>
       <Header cart={cart} />
       <ButtonBackToHome>Volver Home </ButtonBackToHome>
-      <Image item={productDetail} />
+      <Image image={productDetail.imgUrl} />
       <Description description={productDetail} />
       <Actions product={productDetail} setColor={setColor} setStorage={setStorage} addProductCart={addProductCart} />
     </div>
