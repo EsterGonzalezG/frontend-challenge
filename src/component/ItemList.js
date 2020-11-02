@@ -37,7 +37,12 @@ export const ItemList = ({ list }) => {
                         Model :<span className='color-dark-60'> {product.model}</span>
                       </li>
                       <li key={product.price}>
-                        Price: <span className='color-dark-60'>{product.price} </span>
+                        Price:{' '}
+                        {product.price !== '' ? (
+                          <span className='color-dark-60'>{product.price} </span>
+                        ) : (
+                          <span className='color-dark-60'> - </span>
+                        )}
                       </li>
                     </ul>
                   </div>
