@@ -20,7 +20,8 @@ export const ItemList = ({ list }) => {
           {phones
             ?.filter(
               (product) =>
-                product.brand.toLowerCase().includes(valueSearch) || product.model.toLowerCase().includes(valueSearch),
+                product.brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
+                product.model.toLowerCase().includes(valueSearch.toLocaleLowerCase()),
             )
             .map((product, index) => (
               <li key={index} className='Card l-marginBottom-24'>
