@@ -1,6 +1,25 @@
-// Color Palette
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
 
+// Fonts
+
+$font: 'Roboto', sans-serif;
+
+// weight
+
+$bold: 700;
+$regular: 400;
+
+// Color Palette
 $white: #fff;
+$lightGrayish: #eeedf0;
 $softViolet: #9e65da;
+$strongViolet: #772fc4;
 $softLimeGreen: #65da9e;
-$softBlue: #65a1da;
+$dark-100: #383641;
+$dark-60: #48484c;
+
+// Breakpoints
+$extraSmall: 450px;
+$small: 767px;
+$medium: 992px;
+$large: 1200px;
