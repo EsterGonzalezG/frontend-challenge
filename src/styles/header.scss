@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .header {
   position: fixed;
@@ -9,14 +10,15 @@
   background-color: $white;
   width: -webkit-fill-available;
   width: -moz-available;
+
   &-icon {
     margin-right: 10px;
     > svg {
-      width: 56px;
-      height: 56px;
+      @include size(56px);
       fill: $softLimeGreen;
     }
   }
+
   &-content {
     flex: 1;
     margin-right: 10px;

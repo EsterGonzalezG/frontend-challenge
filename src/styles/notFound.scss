@@ -11,8 +11,7 @@
   &-icon {
     margin-bottom: 100px;
     > svg {
-      width: 200px;
-      height: 200px;
+      @include size(200px);
       fill: $strongViolet;
     }
   }

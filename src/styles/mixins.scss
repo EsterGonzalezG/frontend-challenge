@@ -39,6 +39,11 @@
   line-height: 2.5rem;
 }
 
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
 @mixin screen($breakpoint) {
   @media (min-width: $breakpoint) {
     @content;

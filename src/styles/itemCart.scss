@@ -7,17 +7,19 @@
   &-icon {
     > svg {
       fill: $strongViolet;
-      height: 30px;
-      width: 30px;
+      @include size(30px);
+
       @include screen($extraSmall) {
-        height: 40px;
-        width: 40px;
+        @include size(40px);
       }
     }
   }
 
   &-number {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 800;
     font-size: 15px;
     left: 15px;
@@ -25,19 +27,15 @@
     background-color: $white;
     border-radius: 50px;
     border: 1px solid $dark-60;
-    width: 10px;
-    height: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include size(10px);
+
     padding: 6px;
 
     @include screen($extraSmall) {
       position: absolute;
       left: 20px;
       bottom: 50px;
-      width: 15px;
-      height: 15px;
+      @include size(15px);
       padding: 8px;
     }
 
