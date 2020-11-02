@@ -1,0 +1,10 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.title {
+  @include font-m-bold;
+
+  @include screen($extraSmall) {
+    @include font-l-bold;
+  }
+}

@@ -1,4 +1,7 @@
 @import './variables.scss';
+body {
+  background-color: $lightGrayish;
+}
 
 ul {
   list-style: none;
@@ -17,6 +20,6 @@ p {
 }
 
 a {
-  color: $softLimeGreen;
+  color: $strongViolet;
   text-decoration: none;
 }

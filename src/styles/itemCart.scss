@@ -1,0 +1,56 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.itemCart {
+  position: relative;
+
+  &-icon {
+    > svg {
+      fill: $strongViolet;
+      height: 30px;
+      width: 30px;
+      @include screen($extraSmall) {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+
+  &-number {
+    position: absolute;
+    font-weight: 800;
+    font-size: 15px;
+    left: 15px;
+    bottom: 48px;
+    background-color: $white;
+    border-radius: 50px;
+    border: 1px solid $dark-60;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+
+    @include screen($extraSmall) {
+      position: absolute;
+      left: 20px;
+      bottom: 50px;
+      width: 15px;
+      height: 15px;
+      padding: 8px;
+    }
+
+    &::before {
+      content: attr(data-number);
+      align-items: center;
+      color: $dark-100;
+
+      @include font-s-bold;
+
+      @include screen($extraSmall) {
+        @include font-m-bold;
+      }
+    }
+  }
+}

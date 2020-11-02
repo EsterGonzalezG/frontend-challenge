@@ -1,0 +1,20 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.breadcrumbs {
+  @include font-s-regular;
+  display: flex;
+  align-items: center;
+
+  @include screen($extraSmall) {
+    @include font-m-regular;
+  }
+
+  &-link {
+    &::after {
+      content: '>';
+      margin: 0 10px;
+      color: $dark-60;
+    }
+  }
+}
