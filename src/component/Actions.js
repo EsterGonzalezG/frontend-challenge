@@ -15,13 +15,13 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
     <form className='actions'>
       <label className='actions-label l-flexCenterAround l-marginBottom-24'>
         <Select options={product?.options?.colors} name='Color' setOptionsValue={setColor} />
-        <Select options={product?.options?.storages} name='Almacenamiento' setOptionsValue={setStorage} />
+        <Select options={product?.options?.storages} name='Storage' setOptionsValue={setStorage} />
       </label>
       <div className='l-flexCenterAround'>
         <button type='button' onClick={addProductCart} className='Button Button--primary'>
-          Añadir
+          Add
         </button>
-        <ButtonBackToHome>Volver</ButtonBackToHome>
+        <ButtonBackToHome>Back</ButtonBackToHome>
       </div>
     </form>
   );
