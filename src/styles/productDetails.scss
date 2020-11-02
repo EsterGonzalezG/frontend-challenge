@@ -17,5 +17,12 @@
     @include screen($small) {
       margin-bottom: 0;
     }
+    > img {
+      height: 320px;
+    }
+  }
+
+  &-list {
+    border-bottom: 1px solid $dark-60;
   }
 }

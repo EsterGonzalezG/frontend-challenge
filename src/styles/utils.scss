@@ -1,7 +1,7 @@
 @import './mixins.scss';
 
 .wrapper {
-  margin: 100px 0 48px;
+  margin: 120px 0 48px;
 }
 
 .l-content-wide {
@@ -27,9 +27,14 @@
 }
 
 .l-paddingY-24 {
-  padding: 24px;
+  padding: 24px 0;
 }
-
+.l-paddingY-48 {
+  padding: 48px 0;
+}
+.l-marginTop-24 {
+  margin-top: 24px;
+}
 .l-marginBottom-16 {
   margin-bottom: 16px;
 }
@@ -42,14 +47,6 @@
   margin-bottom: 36px;
 }
 
-.l-marginTop-200 {
-  margin-top: 200px;
-}
-
-.font-m {
-  @include font-m-regular;
-}
-
 .color-dark-100 {
   color: $dark-100;
 }
@@ -59,4 +56,8 @@
 
 .color-violet {
   color: #772fc4;
+}
+
+.font-m {
+  @include font-m-regular;
 }
