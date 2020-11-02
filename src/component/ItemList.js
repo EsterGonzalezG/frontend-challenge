@@ -23,15 +23,23 @@ export const ItemList = ({ list }) => {
                 product.brand.toLowerCase().includes(valueSearch) || product.model.toLowerCase().includes(valueSearch),
             )
             .map((product, index) => (
-              <li key={index} className='Card l-marginBottom-24 l-paddingY-24'>
+              <li key={index} className='Card l-marginBottom-24'>
                 <Link to={`/detail/${product.id}`}>
                   <div className='itemList-element'>
-                    <Image image={product.imgUrl} />
-                    <div>
-                      {product.brand}
-                      {product.model}
-                      {product.price}
+                    <div className='l-marginBottom-16'>
+                      <Image image={product.imgUrl} />
                     </div>
+                    <ul>
+                      <li key={product.brand}>
+                        Brand : <span className='color-dark-60'>{product.brand}</span>
+                      </li>
+                      <li key={product.model}>
+                        Model :<span className='color-dark-60'> {product.model}</span>
+                      </li>
+                      <li key={product.price}>
+                        Price: <span className='color-dark-60'>{product.price} </span>
+                      </li>
+                    </ul>
                   </div>
                 </Link>
               </li>

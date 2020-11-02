@@ -2,20 +2,38 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export const Description = ({ description }) => {
+  let descriptionArray = [];
+  let keyArray = [
+    'brand',
+    'model',
+    'price',
+    'cpu',
+    'ram',
+    'os',
+    'displayResolution',
+    'battery',
+    'primaryCamera',
+    'secondaryCmera',
+    'dimentions',
+    'weight',
+  ];
+
+  Object.keys(description).forEach((key) => {
+    keyArray.filter((item) => {
+      if (item === key) {
+        descriptionArray.push({ id: key.charAt(0).toUpperCase() + key.slice(1), value: description[key] });
+      }
+      return descriptionArray;
+    });
+  });
+
   return (
-    <ul>
-      <li>Marca: {description.brand}</li>
-      <li>Modelo: {description.model}</li>
-      <li>Price: {description.price}</li>
-      <li>CPU: {description.cpu}</li>
-      <li>RAM: {description.ram}</li>
-      <li>S.O.: {description.os}</li>
-      <li>Resolución: {description.displayResolution}</li>
-      <li>Bateria: {description.battery}</li>
-      <li>Camara principal: {description.primaryCamera}</li>
-      <li>Camara secundaria: {description.secondaryCmera}</li>
-      <li>Dimensiones: {description.dimentions}</li>
-      <li>Peso: {description.weight}</li>
+    <ul className='description color-dark-100 l-marginBottom-24 font-m'>
+      {descriptionArray.map((item) => (
+        <li key={item.id} className='color-violet'>
+          {item?.id} : <span className='color-dark-60'>{item?.value}</span>
+        </li>
+      ))}
     </ul>
   );
 };

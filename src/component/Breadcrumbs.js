@@ -19,11 +19,14 @@ export const Breadcrumbs = () => {
   function renderCrumb(option) {
     return option.map((item, index) => {
       return option.length - 1 === index ? (
-        <li key={index}>{item.label}</li>
+        <li className='breadcrumbs-item' key={index}>
+          {item.label}
+        </li>
       ) : (
         <li key={index}>
-          <Link to={item.path}>{item.label}</Link>
-          {' > '}
+          <Link to={item.path} className='breadcrumbs-link'>
+            {item.label}
+          </Link>
         </li>
       );
     });
@@ -31,7 +34,7 @@ export const Breadcrumbs = () => {
 
   return (
     <nav>
-      <ul>{crumb()}</ul>
+      <ul className='breadcrumbs color-dark-60'>{crumb()}</ul>
     </nav>
   );
 };
