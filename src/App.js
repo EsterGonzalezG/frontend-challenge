@@ -8,13 +8,13 @@ const ProductDetails = lazy(() => import('./pages/ProductDetails'));
 function App() {
   return (
     <div>
-      <Switch>
-        <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/detail/:mobileId' component={ProductDetails} />
           <Route component={NotFound} />
-        </Suspense>
-      </Switch>
+        </Switch>
+      </Suspense>
     </div>
   );
 }
