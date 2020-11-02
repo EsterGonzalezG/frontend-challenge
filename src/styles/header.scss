@@ -8,6 +8,7 @@
   padding: 10px 30px;
   background-color: $white;
   width: -webkit-fill-available;
+  width: -moz-available;
   &-icon {
     margin-right: 10px;
     > svg {
