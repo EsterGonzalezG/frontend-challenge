@@ -6,6 +6,7 @@ import { Image } from '../component/Image';
 import { addProducts } from '../services/addProducts';
 import { getProductId } from '../services/getProducts';
 import { Header } from './../component/Header';
+import { Title } from './../component/Title';
 import { getSessionStorage, setSessionStorage } from './../utils/sessionStorage';
 
 const ProductDetails = () => {
@@ -37,20 +38,29 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className='l-marginTop-200'>
+    <div>
       <Header cart={cart} />
-      <div className='Card l-content-wide productDetails'>
-        <div className='productDetails-img'>
-          <Image image={productDetail.imgUrl} />
-        </div>
-        <div className='productDetails-content'>
-          <Description description={productDetail} />
-          <Actions
-            product={productDetail}
-            setColor={setColor}
-            setStorage={setStorage}
-            addProductCart={addProductCart}
-          />
+      <div className='wrapper'>
+        <div className='l-content-wide'>
+          <div className='l-paddingY-48'>
+            <Title>{productDetail.model}</Title>
+          </div>
+          <div className='Card productDetails'>
+            <div className='productDetails-img'>
+              <Image image={productDetail.imgUrl} />
+            </div>
+            <div className='productDetails-content'>
+              <div className='productDetails-list'>
+                <Description description={productDetail} />
+              </div>
+              <Actions
+                product={productDetail}
+                setColor={setColor}
+                setStorage={setStorage}
+                addProductCart={addProductCart}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -21,9 +21,13 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className='l-marginTop-200'>
+    <div>
       <Header cart={cartItems} />
-      <ItemList list={list} />
+      <div className='wrapper'>
+        <div className='l-paddingY-48'>
+          <ItemList list={list} />
+        </div>
+      </div>
     </div>
   );
 };

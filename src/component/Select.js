@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
 export const Select = ({ options, name, setOptionsValue }) => (
-  <div className=''>
+  <Fragment>
     <label htmlFor={name} className='font-m color-dark-100'>
       {name}{' '}
     </label>
@@ -18,7 +18,7 @@ export const Select = ({ options, name, setOptionsValue }) => (
         </option>
       ))}
     </select>
-  </div>
+  </Fragment>
 );
 
 Select.prototype = {
