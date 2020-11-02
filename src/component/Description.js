@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Subtitle } from './Subtitle';
 
 export const Description = ({ description }) => {
   let descriptionArray = [];
@@ -28,13 +29,21 @@ export const Description = ({ description }) => {
   });
 
   return (
-    <ul className='description color-dark-100 l-marginBottom-24 font-m'>
-      {descriptionArray.map((item) => (
-        <li key={item.id} className='color-violet'>
-          {item?.id} : <span className='color-dark-60'>{item?.value}</span>
-        </li>
-      ))}
-    </ul>
+    <Fragment>
+      <Subtitle>Characteristics:</Subtitle>
+      <ul className='color-dark-100 l-marginBottom-24 font-m'>
+        {descriptionArray.map((item) => (
+          <li key={item.id} className='color-violet'>
+            {item?.id} :
+            {item?.value !== '' ? (
+              <span className='color-dark-60'>{item?.value}</span>
+            ) : (
+              <span className='color-dark-60'> - </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </Fragment>
   );
 };
 
