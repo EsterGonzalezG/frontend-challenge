@@ -5,7 +5,7 @@ import { Header } from './../component/Header';
 import { getSessionStorage } from './../utils/sessionStorage';
 
 export const Home = () => {
-  const cartItems = getSessionStorage('cart');
+  const cartItems = getSessionStorage('cart') ? getSessionStorage('cart') : 0;
   const [list, setList] = useState([]);
   const isMountedRef = useRef(null);
 
