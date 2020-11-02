@@ -6,9 +6,9 @@ import { Image } from '../component/Image';
 import { addProducts } from '../services/addProducts';
 import { getProductId } from '../services/getProducts';
 import { Header } from './../component/Header';
+import { NotData } from './../component/NotData';
 import { Title } from './../component/Title';
 import { getSessionStorage, setSessionStorage } from './../utils/sessionStorage';
-
 const ProductDetails = () => {
   const id = useParams().mobileId;
   const isMountedRef = useRef(null);
@@ -40,29 +40,34 @@ const ProductDetails = () => {
   return (
     <div>
       <Header cart={cart} />
-      <div className='wrapper'>
-        <div className='l-content-wide'>
-          <div className='l-paddingY-48'>
-            <Title>{productDetail.model}</Title>
-          </div>
-          <div className='Card productDetails'>
-            <div className='productDetails-img'>
-              <Image image={productDetail.imgUrl} />
+
+      {productDetail?.code === 0 ? (
+        <NotData>Sorry, at the moment there is no data to display </NotData>
+      ) : (
+        <div className='wrapper'>
+          <div className='l-content-wide'>
+            <div className='l-paddingY-48'>
+              <Title>{productDetail.model}</Title>
             </div>
-            <div className='productDetails-content'>
-              <div className='productDetails-list'>
-                <Description description={productDetail} />
+            <div className='Card productDetails'>
+              <div className='productDetails-img'>
+                <Image image={productDetail.imgUrl} />
               </div>
-              <Actions
-                product={productDetail}
-                setColor={setColor}
-                setStorage={setStorage}
-                addProductCart={addProductCart}
-              />
+              <div className='productDetails-content'>
+                <div className='productDetails-list'>
+                  <Description description={productDetail} />
+                </div>
+                <Actions
+                  product={productDetail}
+                  setColor={setColor}
+                  setStorage={setStorage}
+                  addProductCart={addProductCart}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

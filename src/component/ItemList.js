@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from './Image';
+import { NotData } from './NotData';
 import { Search } from './Search';
 
 export const ItemList = ({ list }) => {
@@ -12,6 +13,7 @@ export const ItemList = ({ list }) => {
   useEffect(() => {
     setPhones(list);
   }, [list]);
+
   if (list) {
     return (
       <div className='itemList l-content-wide'>
@@ -54,7 +56,7 @@ export const ItemList = ({ list }) => {
       </div>
     );
   } else {
-    <div>No hay datos en este momento</div>;
+    <NotData>Sorry, at the moment there is no data to display </NotData>;
   }
 };
 
