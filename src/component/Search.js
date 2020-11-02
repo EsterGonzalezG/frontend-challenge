@@ -3,8 +3,10 @@ import React from 'react';
 
 export const Search = ({ setValueSearch }) => {
   return (
-    <form className='l-marginBottom-24 l-flex-justifyEnd'>
+    <form className='l-marginBottom-36 l-flex-justifyEnd'>
+      <label htmlFor='search'></label>
       <input
+        id='search'
         className='Input'
         type='text'
         placeholder='Mobile to search...'

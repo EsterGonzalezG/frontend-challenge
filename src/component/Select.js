@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 export const Select = ({ options, name, setOptionsValue }) => (
   <div className=''>
-    <label htmlFor='color'>{name}</label>
+    <label htmlFor={name} className='font-m color-dark-100'>
+      {name}{' '}
+    </label>
     <select
       name={name}
       id={name}
