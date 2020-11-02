@@ -2,6 +2,7 @@ import { PropTypes } from 'prop-types';
 import React, { useEffect } from 'react';
 import { ButtonBackToHome } from './ButtonBackToHome';
 import { Select } from './Select';
+import { Subtitle } from './Subtitle';
 
 export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
   useEffect(() => {
@@ -12,7 +13,8 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
   }, [setColor, setStorage, product]);
 
   return (
-    <form className='actions'>
+    <form className='l-paddingY-24'>
+      <Subtitle>Select:</Subtitle>
       <label className='actions-label l-flexCenterAround l-marginBottom-24'>
         <Select options={product?.options?.colors} name='Color' setOptionsValue={setColor} />
         <Select options={product?.options?.storages} name='Storage' setOptionsValue={setStorage} />
@@ -21,7 +23,7 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
         <button type='button' onClick={addProductCart} className='Button Button--primary'>
           Add
         </button>
-        <ButtonBackToHome>Back</ButtonBackToHome>
+        <ButtonBackToHome>List</ButtonBackToHome>
       </div>
     </form>
   );
