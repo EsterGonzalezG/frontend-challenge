@@ -1,0 +1,46 @@
+@import './variables.scss';
+
+@mixin font-s-regular {
+  font-family: $font;
+  font-weight: $regular;
+  line-height: 22px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+@mixin font-s-bold {
+  font-family: $font;
+  font-weight: $bold;
+  line-height: 22px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+@mixin font-m-regular {
+  font-family: $font;
+  font-weight: $regular;
+  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin font-m-bold {
+  font-family: $font;
+  font-weight: $bold;
+  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin font-l-bold {
+  font-family: $font;
+  font-weight: $bold;
+  line-height: 22px;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+@mixin screen($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
