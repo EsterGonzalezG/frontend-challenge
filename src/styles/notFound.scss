@@ -1,0 +1,24 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.notFount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &-icon {
+    margin-bottom: 100px;
+    > svg {
+      width: 200px;
+      height: 200px;
+      fill: $strongViolet;
+    }
+  }
+
+  &-text {
+    @include font-l-bold;
+    text-align: center;
+  }
+}
