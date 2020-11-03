@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from './Image';
 import { NotData } from './NotData';
@@ -8,18 +8,12 @@ import { Search } from './Search';
 export const ItemList = ({ list }) => {
   const [valueSearch, setValueSearch] = useState('');
 
-  const [phones, setPhones] = useState([]);
-
-  useEffect(() => {
-    setPhones(list);
-  }, [list]);
-
   if (list) {
     return (
       <div className='itemList l-content-wide'>
         <Search setValueSearch={setValueSearch} />
         <ul className='itemList-list'>
-          {phones
+          {list
             ?.filter(
               (product) =>
                 product.brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
