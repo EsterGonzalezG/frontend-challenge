@@ -24,7 +24,10 @@ export const Description = ({ description }) => {
     Object.keys(description).forEach((key) => {
       keyArray.filter((item) => {
         if (item === key) {
-          descriptionArray.push({ id: key.charAt(0).toUpperCase() + key.slice(1), value: description[key] });
+          descriptionArray = [
+            ...descriptionArray,
+            { id: key.charAt(0).toUpperCase() + key.slice(1), value: description[key] },
+          ];
         }
         return setDescriptionValue(descriptionArray);
       });
