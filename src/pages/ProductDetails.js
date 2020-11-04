@@ -51,7 +51,7 @@ const ProductDetails = () => {
             </div>
             <div className='Card productDetails'>
               <div className='productDetails-img'>
-                <Image image={productDetail.imgUrl} />
+                <Image image={productDetail.imgUrl} model={productDetail.model} />
               </div>
               <div className='productDetails-content'>
                 <div className='productDetails-list'>

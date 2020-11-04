@@ -5,7 +5,7 @@ export const Breadcrumbs = () => {
   const location = useLocation();
   const config = {
     home: [{ label: 'Home', path: '/' }],
-    details: [{ label: 'Home', path: '/' }, { label: 'Detalle del producto' }],
+    details: [{ label: 'Home', path: '/' }, { label: 'Product details' }],
   };
 
   function crumb() {

@@ -24,7 +24,7 @@ export const ItemList = ({ list }) => {
                 <Link to={`/detail/${product.id}`}>
                   <div className='itemList-element'>
                     <div className='itemList-img l-marginBottom-16'>
-                      <Image image={product.imgUrl} />
+                      <Image image={product.imgUrl} model={product.model} />
                     </div>
                     <ul>
                       <li key={product.brand}>
