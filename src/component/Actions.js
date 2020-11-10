@@ -12,8 +12,12 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
     }
   }, [setColor, setStorage, product]);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className='l-paddingY-24'>
+    <form onSubmit={handleSubmit} className='l-paddingY-24'>
       <Subtitle>Select:</Subtitle>
       <label className='actions-label l-flexCenterAround l-marginBottom-24'>
         <Select options={product?.options?.colors} name='Color' setOptionsValue={setColor} />

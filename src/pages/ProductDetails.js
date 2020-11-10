@@ -11,28 +11,31 @@ import { Title } from './../component/Title';
 import { getSessionStorage, setSessionStorage } from './../utils/sessionStorage';
 const ProductDetails = () => {
   const id = useParams().mobileId;
-  const isMountedRef = useRef(null);
+  const isMountedRef = useRef(true);
   const [productDetail, setProductDetail] = useState({});
   const [colorCode, setColor] = useState('');
   const [storageCode, setStorage] = useState('');
   const [cart, setCart] = useState(() => (getSessionStorage('cart') ? parseInt(getSessionStorage('cart')) : 0));
 
   useEffect(() => {
-    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
     getProductId(id).then((data) => {
       if (isMountedRef.current) {
         setProductDetail(data);
       }
     });
-
-    return () => (isMountedRef.current = false);
   }, [id, cart]);
 
   const addProductCart = () => {
-    addProducts({ id, colorCode, storageCode }).then((data) => {
+    addProducts({ id, colorCode, storageCode }).then(({ count }) => {
       setCart((current) => {
-        setSessionStorage('cart', current + data?.count);
-        return current + data?.count;
+        setSessionStorage('cart', current + count);
+        return current + count;
       });
     });
   };

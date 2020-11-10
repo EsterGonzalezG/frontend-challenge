@@ -17,15 +17,15 @@ export const Breadcrumbs = () => {
   }
 
   function renderCrumb(option) {
-    return option.map((item, index) => {
+    return option.map(({ label, path }, index) => {
       return option.length - 1 === index ? (
         <li className='breadcrumbs-item' key={index}>
-          {item.label}
+          {label}
         </li>
       ) : (
         <li key={index}>
-          <Link to={item.path} className='breadcrumbs-link'>
-            {item.label}
+          <Link to={path} className='breadcrumbs-link'>
+            {label}
           </Link>
         </li>
       );

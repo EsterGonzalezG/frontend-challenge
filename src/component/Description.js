@@ -38,14 +38,10 @@ export const Description = ({ description }) => {
     <Fragment>
       <Subtitle>Characteristics:</Subtitle>
       <ul className='color-dark-100 l-marginBottom-24 font-m'>
-        {descriptionValue.map((item) => (
-          <li key={item.id} className='color-violet'>
-            {item?.id} :
-            {item?.value !== '' ? (
-              <span className='color-dark-60'>{item?.value}</span>
-            ) : (
-              <span className='color-dark-60'> - </span>
-            )}
+        {descriptionValue.map(({ id, value }) => (
+          <li key={id} className='color-violet'>
+            {id} :
+            {value !== '' ? <span className='color-dark-60'>{value}</span> : <span className='color-dark-60'> - </span>}
           </li>
         ))}
       </ul>
