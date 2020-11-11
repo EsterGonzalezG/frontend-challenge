@@ -4,7 +4,7 @@ import { ButtonBackToHome } from './ButtonBackToHome';
 import { Select } from './Select';
 import { Subtitle } from './Subtitle';
 
-export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
+export const Actions = React.memo(({ product, setColor, setStorage, addProductCart }) => {
   useEffect(() => {
     if (Object.entries(product).length) {
       setColor(product?.options?.colors[0].code);
@@ -12,8 +12,12 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
     }
   }, [setColor, setStorage, product]);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className='l-paddingY-24'>
+    <form onSubmit={handleSubmit} className='l-paddingY-24'>
       <Subtitle>Select:</Subtitle>
       <label className='actions-label l-flexCenterAround l-marginBottom-24'>
         <Select options={product?.options?.colors} name='Color' setOptionsValue={setColor} />
@@ -27,7 +31,7 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
       </div>
     </form>
   );
-};
+});
 
 Actions.prototype = {
   product: PropTypes.shape({

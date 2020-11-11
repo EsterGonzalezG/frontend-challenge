@@ -15,28 +15,28 @@ export const ItemList = ({ list }) => {
         <ul className='itemList-list'>
           {list
             ?.filter(
-              (product) =>
-                product.brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
-                product.model.toLowerCase().includes(valueSearch.toLocaleLowerCase()),
+              ({ brand, model }) =>
+                brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
+                model.toLowerCase().includes(valueSearch.toLocaleLowerCase()),
             )
-            .map((product, index) => (
+            .map(({ id, imgUrl, brand, model, price }, index) => (
               <li key={index} className='Card l-marginBottom-24'>
-                <Link to={`/detail/${product.id}`}>
+                <Link to={`/detail/${id}`}>
                   <div className='itemList-element'>
                     <div className='itemList-img l-marginBottom-16'>
-                      <Image image={product.imgUrl} model={product.model} />
+                      <Image image={imgUrl} model={model} />
                     </div>
                     <ul>
-                      <li key={product.brand}>
-                        Brand : <span className='color-dark-60'>{product.brand}</span>
+                      <li key={brand}>
+                        Brand : <span className='color-dark-60'>{brand}</span>
                       </li>
-                      <li key={product.model}>
-                        Model :<span className='color-dark-60'> {product.model}</span>
+                      <li key={model}>
+                        Model :<span className='color-dark-60'> {model}</span>
                       </li>
-                      <li key={product.price}>
+                      <li key={price}>
                         Price:{' '}
-                        {product.price !== '' ? (
-                          <span className='color-dark-60'>{product.price} </span>
+                        {price !== '' ? (
+                          <span className='color-dark-60'>{price} </span>
                         ) : (
                           <span className='color-dark-60'> - </span>
                         )}

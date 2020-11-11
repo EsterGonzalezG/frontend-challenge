@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export const Search = ({ setValueSearch }) => {
+export const Search = React.memo(({ setValueSearch }) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className='l-marginBottom-36 l-flex-justifyEnd'>
+    <form onSubmit={handleSubmit} className='l-marginBottom-36 l-flex-justifyEnd'>
       <label htmlFor='search'></label>
       <input
         id='search'
@@ -14,7 +18,7 @@ export const Search = ({ setValueSearch }) => {
       />
     </form>
   );
-};
+});
 
 Search.prototype = {
   setValueSearch: PropTypes.func.isRequired,
