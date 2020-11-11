@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Actions } from '../component/Actions';
 import { Description } from '../component/Description';
@@ -17,6 +17,8 @@ const ProductDetails = () => {
   const [storageCode, setStorage] = useState('');
   const [cart, setCart] = useState(() => (getSessionStorage('cart') ? parseInt(getSessionStorage('cart')) : 0));
 
+  const { code, model, imgUrl } = productDetail;
+
   useEffect(() => {
     return () => {
       isMountedRef.current = false;
@@ -29,32 +31,32 @@ const ProductDetails = () => {
         setProductDetail(data);
       }
     });
-  }, [id, cart]);
+  }, [id]);
 
-  const addProductCart = () => {
+  const addProductCart = useCallback(() => {
     addProducts({ id, colorCode, storageCode }).then(({ count }) => {
       setCart((current) => {
         setSessionStorage('cart', current + count);
         return current + count;
       });
     });
-  };
+  }, [setCart, id, colorCode, storageCode]);
 
   return (
     <div>
       <Header cart={cart} />
 
-      {productDetail?.code === 0 ? (
+      {code === 0 ? (
         <NotData>Sorry, at the moment there is no data to display </NotData>
       ) : (
         <div className='wrapper'>
           <div className='l-content-wide'>
             <div className='l-paddingY-48'>
-              <Title>{productDetail.model}</Title>
+              <Title>{model}</Title>
             </div>
             <div className='Card productDetails'>
               <div className='productDetails-img'>
-                <Image image={productDetail.imgUrl} model={productDetail.model} />
+                <Image image={imgUrl} model={model} />
               </div>
               <div className='productDetails-content'>
                 <div className='productDetails-list'>

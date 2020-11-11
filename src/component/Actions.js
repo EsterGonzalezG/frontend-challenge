@@ -4,7 +4,9 @@ import { ButtonBackToHome } from './ButtonBackToHome';
 import { Select } from './Select';
 import { Subtitle } from './Subtitle';
 
-export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
+export const Actions = React.memo(({ product, setColor, setStorage, addProductCart }) => {
+  console.log('aqui');
+
   useEffect(() => {
     if (Object.entries(product).length) {
       setColor(product?.options?.colors[0].code);
@@ -31,7 +33,7 @@ export const Actions = ({ product, setColor, setStorage, addProductCart }) => {
       </div>
     </form>
   );
-};
+});
 
 Actions.prototype = {
   product: PropTypes.shape({
