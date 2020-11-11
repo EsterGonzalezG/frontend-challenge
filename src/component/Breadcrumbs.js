@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs = React.memo(() => {
   const location = useLocation();
   const config = {
     home: [{ label: 'Home', path: '/' }],
@@ -37,4 +37,4 @@ export const Breadcrumbs = () => {
       <ul className='breadcrumbs color-dark-60'>{crumb()}</ul>
     </nav>
   );
-};
+});

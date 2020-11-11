@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
-export const Select = ({ options, name, setOptionsValue }) => (
-  <Fragment>
+import React from 'react';
+export const Select = React.memo(({ options, name, setOptionsValue }) => (
+  <>
     <label htmlFor={name} className='font-m color-dark-100'>
       {name}{' '}
     </label>
@@ -12,14 +12,14 @@ export const Select = ({ options, name, setOptionsValue }) => (
         setOptionsValue(event.target.value);
       }}
     >
-      {options?.map((item, index) => (
-        <option value={item.code} key={index}>
-          {item.name}
+      {options?.map(({ code, name }, index) => (
+        <option value={code} key={index}>
+          {name}
         </option>
       ))}
     </select>
-  </Fragment>
-);
+  </>
+));
 
 Select.prototype = {
   options: PropTypes.string.isRequired,

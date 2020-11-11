@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Subtitle } from './Subtitle';
 
-export const Description = ({ description }) => {
+export const Description = React.memo(({ description }) => {
   const [descriptionValue, setDescriptionValue] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,9 @@ export const Description = ({ description }) => {
       'dimentions',
       'weight',
     ];
+
     let descriptionArray = [];
+
     Object.keys(description).forEach((key) => {
       keyArray.filter((item) => {
         if (item === key) {
@@ -47,7 +49,7 @@ export const Description = ({ description }) => {
       </ul>
     </Fragment>
   );
-};
+});
 
 Description.prototype = {
   description: PropTypes.shape({
