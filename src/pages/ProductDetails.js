@@ -1,22 +1,22 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Actions } from '../component/Actions';
 import { Description } from '../component/Description';
 import { Image } from '../component/Image';
 import { addProducts } from '../services/addProducts';
 import { getProductId } from '../services/getProducts';
+import { CartContext } from '../useContext/CartContext';
 import { Header } from './../component/Header';
 import { NotData } from './../component/NotData';
 import { Title } from './../component/Title';
-import { getSessionStorage, setSessionStorage } from './../utils/sessionStorage';
+import { setSessionStorage } from './../utils/sessionStorage';
 const ProductDetails = () => {
   const id = useParams().mobileId;
   const isMountedRef = useRef(true);
+  const { cart, setCart } = useContext(CartContext);
   const [productDetail, setProductDetail] = useState({});
   const [colorCode, setColor] = useState('');
   const [storageCode, setStorage] = useState('');
-  const [cart, setCart] = useState(() => (getSessionStorage('cart') ? parseInt(getSessionStorage('cart')) : 0));
-
   const { code, model, imgUrl } = productDetail;
 
   useEffect(() => {

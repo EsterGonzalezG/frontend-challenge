@@ -1,28 +1,31 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ItemList } from '../component/ItemList';
 import { localStorageList } from '../utils/localStorage';
 import { Header } from './../component/Header';
-import { getSessionStorage } from './../utils/sessionStorage';
+import { CartContext } from './../useContext/CartContext';
 
 export const Home = () => {
-  const cartItems = getSessionStorage('cart') ? getSessionStorage('cart') : 0;
+  const isMountedRef = useRef(true);
+  const { cart } = useContext(CartContext);
   const [list, setList] = useState([]);
-  const isMountedRef = useRef(null);
 
   useEffect(() => {
-    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
     localStorageList().then((productList) => {
       if (isMountedRef.current) {
         setList(productList);
       }
     });
-
-    return () => (isMountedRef.current = false);
   }, []);
 
   return (
     <div>
-      <Header cart={cartItems} />
+      <Header cart={cart} />
       <div className='wrapper'>
         <div className='l-paddingY-48'>
           <ItemList list={list} />
