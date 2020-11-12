@@ -13,7 +13,7 @@ import { setSessionStorage } from './../utils/sessionStorage';
 const ProductDetails = () => {
   const id = useParams().mobileId;
   const isMountedRef = useRef(true);
-  const { cart, setCart } = useContext(CartContext);
+  const { setCart } = useContext(CartContext);
   const [productDetail, setProductDetail] = useState({});
   const [colorCode, setColor] = useState('');
   const [storageCode, setStorage] = useState('');
@@ -44,7 +44,7 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <Header cart={cart} />
+      <Header />
 
       {code === 0 ? (
         <NotData>Sorry, at the moment there is no data to display </NotData>
