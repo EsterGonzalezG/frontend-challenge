@@ -12,7 +12,6 @@ const ProductDetails = lazy(() => import('./pages/ProductDetails'));
 function App() {
   const { pathname } = useLocation();
   const [cart, setCart] = useState(() => (getSessionStorage('cart') ? parseInt(getSessionStorage('cart')) : 0));
-
   return (
     <div>
       <CartContext.Provider value={{ cart, setCart }}>
@@ -20,7 +19,7 @@ function App() {
           {pathname !== '/404' && <Header />}
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/detail/:mobileId' component={ProductDetails} />
+            <Route exact path='/detail' component={ProductDetails} />
             <Route exact path='/404' component={NotFound} />
             <Redirect to='/404' />
           </Switch>

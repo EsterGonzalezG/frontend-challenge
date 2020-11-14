@@ -10,11 +10,8 @@
     @include font-m-regular;
   }
 
-  &-link {
-    &::after {
-      content: '>';
-      margin: 0 10px;
-      color: $dark-60;
-    }
+  &-text {
+    margin: 0 10px;
+    color: $dark-60;
   }
 }
