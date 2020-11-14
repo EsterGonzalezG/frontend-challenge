@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs = React.memo(() => {
   const breadcrumb = useLocation().pathname;
 
   let paths = breadcrumb.split('/');
@@ -37,4 +37,4 @@ export const Breadcrumbs = () => {
       <ul className='breadcrumbs color-dark-60'>{breadcrumbs}</ul>
     </nav>
   );
-};
+});
