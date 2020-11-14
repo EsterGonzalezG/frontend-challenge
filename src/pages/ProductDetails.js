@@ -6,7 +6,6 @@ import { Image } from '../component/Image';
 import { addProducts } from '../services/addProducts';
 import { getProductId } from '../services/getProducts';
 import { CartContext } from '../useContext/CartContext';
-import { Header } from './../component/Header';
 import { NotData } from './../component/NotData';
 import { Title } from './../component/Title';
 import { setSessionStorage } from './../utils/sessionStorage';
@@ -44,8 +43,6 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <Header />
-
       {code === 0 ? (
         <NotData>Sorry, at the moment there is no data to display </NotData>
       ) : (

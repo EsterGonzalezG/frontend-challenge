@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ItemList } from '../component/ItemList';
 import { localStorageList } from '../utils/localStorage';
-import { Header } from './../component/Header';
 
 export const Home = () => {
   const isMountedRef = useRef(true);
@@ -24,7 +23,6 @@ export const Home = () => {
 
   return (
     <div>
-      <Header />
       <div className='wrapper'>
         <div className='l-paddingY-48'>
           <ItemList list={list} />
