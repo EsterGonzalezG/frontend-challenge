@@ -21,7 +21,7 @@ export const ItemList = ({ list }) => {
             )
             .map(({ id, imgUrl, brand, model, price }, index) => (
               <li key={index} className='Card l-marginBottom-24'>
-                <Link to={`/detail/${id}`}>
+                <Link to={`/detail?id=${id}`}>
                   <div className='itemList-element'>
                     <div className='itemList-img l-marginBottom-16'>
                       <Image image={imgUrl} model={model} />

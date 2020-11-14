@@ -1,17 +1,17 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Actions } from '../component/Actions';
 import { Description } from '../component/Description';
 import { Image } from '../component/Image';
 import { addProducts } from '../services/addProducts';
 import { getProductId } from '../services/getProducts';
 import { CartContext } from '../useContext/CartContext';
-import { Header } from './../component/Header';
 import { NotData } from './../component/NotData';
 import { Title } from './../component/Title';
 import { setSessionStorage } from './../utils/sessionStorage';
 const ProductDetails = () => {
-  const id = useParams().mobileId;
+  const query = new URLSearchParams(useLocation().search);
+  const id = query.get('id');
   const isMountedRef = useRef(true);
   const { setCart } = useContext(CartContext);
   const [productDetail, setProductDetail] = useState({});
@@ -44,8 +44,6 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <Header />
-
       {code === 0 ? (
         <NotData>Sorry, at the moment there is no data to display </NotData>
       ) : (
