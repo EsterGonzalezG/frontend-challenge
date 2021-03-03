@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Subtitle } from './Subtitle';
 
 export const Description = React.memo(({ description }) => {
@@ -37,7 +37,7 @@ export const Description = React.memo(({ description }) => {
   }, [description]);
 
   return (
-    <Fragment>
+    <>
       <Subtitle>Characteristics:</Subtitle>
       <ul className='color-dark-100 l-marginBottom-24 font-m'>
         {descriptionValue.map(({ id, value }) => (
@@ -47,7 +47,7 @@ export const Description = React.memo(({ description }) => {
           </li>
         ))}
       </ul>
-    </Fragment>
+    </>
   );
 });
 

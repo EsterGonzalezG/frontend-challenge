@@ -22,12 +22,12 @@ export const Home = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <div className='wrapper'>
         <div className='l-paddingY-48'>
           <ItemList list={list} />
         </div>
       </div>
-    </div>
+    </>
   );
 };

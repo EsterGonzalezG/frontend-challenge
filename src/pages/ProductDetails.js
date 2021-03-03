@@ -43,7 +43,7 @@ const ProductDetails = () => {
   }, [setCart, id, colorCode, storageCode]);
 
   return (
-    <div>
+    <>
       {code === 0 ? (
         <NotData>Sorry, at the moment there is no data to display </NotData>
       ) : (
@@ -71,7 +71,7 @@ const ProductDetails = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 export default ProductDetails;
