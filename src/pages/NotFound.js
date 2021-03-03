@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaRegSadCry } from 'react-icons/fa';
-import { ButtonBackToHome } from '../component/ButtonBackToHome';
+import { ButtonBackToHome } from './index';
 export const NotFound = () => (
   <div className='notFount l-content-wide'>
     <span className='notFount-icon'>

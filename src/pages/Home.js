@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ItemList } from '../component/ItemList';
-import { localStorageList } from '../utils/localStorage';
-
+import { ItemList, localStorageList } from './index';
 export const Home = () => {
   const isMountedRef = useRef(true);
 

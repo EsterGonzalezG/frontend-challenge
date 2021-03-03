@@ -1,8 +1,6 @@
 import React from 'react';
 import { SiDsautomobiles } from 'react-icons/si';
-import { Breadcrumbs } from './Breadcrumbs';
-import { ItemCard } from './ItemCart';
-import { Title } from './Title';
+import { Breadcrumbs, ItemCard, Title } from './index';
 
 export const Header = () => {
   return (

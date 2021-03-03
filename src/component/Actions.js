@@ -1,8 +1,6 @@
 import { PropTypes } from 'prop-types';
 import React, { useEffect } from 'react';
-import { ButtonBackToHome } from './ButtonBackToHome';
-import { Select } from './Select';
-import { Subtitle } from './Subtitle';
+import { ButtonBackToHome, Select, Subtitle } from './index';
 
 export const Actions = React.memo(({ product, setColor, setStorage, addProductCart }) => {
   useEffect(() => {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FaRegGrimace } from 'react-icons/fa';
-import { ButtonBackToHome } from './ButtonBackToHome';
+import { ButtonBackToHome } from './index';
 
 export const NotData = ({ children }) => (
   <div className='notFount'>

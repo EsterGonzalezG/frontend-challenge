@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Image } from './Image';
-import { NotData } from './NotData';
-import { Search } from './Search';
+import { Image, NotData, Search } from './index';
 
 export const ItemList = ({ list }) => {
   const [valueSearch, setValueSearch] = useState('');
