@@ -32,9 +32,11 @@ export const Home = () => {
   return (
     <>
       <div className='wrapper'>
-        <div className='l-paddingY-48 l-content-wide'>
-          <Search setValueSearch={setValueSearch} />
-          <ItemList list={filterList} />
+        <div className='l-content-wide'>
+          <div className='l-paddingY-48'>
+            <Search setValueSearch={setValueSearch} />
+            <ItemList list={filterList} />
+          </div>
         </div>
       </div>
     </>

@@ -1,4 +1,5 @@
 @import './mixins.scss';
+@import './variables.scss';
 
 .wrapper {
   margin: 120px 0 48px;
@@ -55,7 +56,7 @@
 }
 
 .color-violet {
-  color: #772fc4;
+  color: $strongViolet;
 }
 
 .font-m {

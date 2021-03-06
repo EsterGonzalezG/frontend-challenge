@@ -5,19 +5,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  margin-top: 50px;
 
   &-icon {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     > svg {
-      @include size(200px);
+      @include size(150px);
       fill: $strongViolet;
     }
   }
 
   &-text {
-    @include font-l-bold;
+    @include font-m-bold;
     text-align: center;
   }
 }

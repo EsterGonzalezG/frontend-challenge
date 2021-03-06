@@ -1,8 +1,8 @@
 import { lazy, React, Suspense, useState } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { Header } from './component/Header';
+import { NotData } from './component/NotData';
 import { Home } from './pages/Home';
-import { NotFound } from './pages/NotFound';
 import './styles/App.scss';
 import { CartContext } from './useContext/CartContext';
 import { getSessionStorage } from './utils/sessionStorage';
@@ -20,7 +20,15 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/detail' component={ProductDetails} />
-            <Route exact path='/404' component={NotFound} />
+            <Route
+              exact
+              path='/404'
+              component={() => (
+                <NotData button={true} textButton={'Home'}>
+                  UUUPPPSSS Sorry! This page is not available
+                </NotData>
+              )}
+            />
             <Redirect to='/404' />
           </Switch>
         </Suspense>

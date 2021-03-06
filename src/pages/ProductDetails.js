@@ -44,11 +44,9 @@ const ProductDetails = () => {
     });
   }, [setCart, id, colorCode, storageCode]);
 
-  return (
-    <>
-      {code === 0 ? (
-        <NotData>Sorry, at the moment there is no data to display </NotData>
-      ) : (
+  if (code !== 0) {
+    return (
+      <>
         <div className='wrapper'>
           <div className='l-content-wide'>
             <div className='l-paddingY-48'>
@@ -72,8 +70,14 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-      )}
-    </>
-  );
+      </>
+    );
+  } else {
+    return (
+      <NotData button={true} textButton={'Home'}>
+        Sorry, at the moment there is no data to display{' '}
+      </NotData>
+    );
+  }
 };
 export default ProductDetails;
