@@ -8,9 +8,9 @@ import { getProductId } from '../services/getProducts';
 import { CartContext } from '../useContext/CartContext';
 import { localStorageList } from '../utils/localStorage';
 import { NotData } from './../component/NotData';
+import { Search } from './../component/Search';
 import { Title } from './../component/Title';
 import { setSessionStorage } from './../utils/sessionStorage';
-
 export {
   ItemList,
   localStorageList,
@@ -24,4 +24,5 @@ export {
   NotData,
   Title,
   setSessionStorage,
+  Search,
 };

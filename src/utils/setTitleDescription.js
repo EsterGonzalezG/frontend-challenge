@@ -24,6 +24,7 @@ export const setTitleDescription = (description) => {
           { id: key.charAt(0).toUpperCase() + key.slice(1), value: description[key] },
         ];
       }
+      return descriptionArray;
     });
   });
   return descriptionArray;

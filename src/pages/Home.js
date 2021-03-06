@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ItemList, localStorageList } from './index';
+import { ItemList, localStorageList, Search } from './index';
 export const Home = () => {
   const isMountedRef = useRef(true);
-
+  const [valueSearch, setValueSearch] = useState('');
   const [list, setList] = useState([]);
-
+  const [filterList, setFilterList] = useState([]);
   useEffect(() => {
     return () => {
       isMountedRef.current = false;
@@ -19,11 +19,22 @@ export const Home = () => {
     });
   }, []);
 
+  useEffect(() => {
+    setFilterList(
+      list.filter(
+        ({ brand, model }) =>
+          brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
+          model.toLowerCase().includes(valueSearch.toLocaleLowerCase()),
+      ),
+    );
+  }, [valueSearch, list]);
+
   return (
     <>
       <div className='wrapper'>
         <div className='l-paddingY-48'>
-          <ItemList list={list} />
+          <Search setValueSearch={setValueSearch} />
+          <ItemList list={filterList} />
         </div>
       </div>
     </>
