@@ -5,7 +5,7 @@ import { Image, NotData } from './index';
 export const ItemList = React.memo(({ list }) => {
   if (list.length > 0) {
     return (
-      <div className='itemList l-content-wide'>
+      <div className='itemList'>
         <ul className='itemList-list'>
           {list.map(({ id, imgUrl, brand, model, price }, index) => (
             <li key={index} className='Card l-marginBottom-24'>

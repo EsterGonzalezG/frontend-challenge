@@ -32,7 +32,7 @@ export const Home = () => {
   return (
     <>
       <div className='wrapper'>
-        <div className='l-paddingY-48'>
+        <div className='l-paddingY-48 l-content-wide'>
           <Search setValueSearch={setValueSearch} />
           <ItemList list={filterList} />
         </div>
