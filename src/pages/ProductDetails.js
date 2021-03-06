@@ -1,22 +1,24 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Actions } from '../component/Actions';
-import { Description } from '../component/Description';
-import { Image } from '../component/Image';
-import { addProducts } from '../services/addProducts';
-import { getProductId } from '../services/getProducts';
-import { Header } from './../component/Header';
-import { NotData } from './../component/NotData';
-import { Title } from './../component/Title';
-import { getSessionStorage, setSessionStorage } from './../utils/sessionStorage';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import {
+  Actions,
+  addProducts,
+  CartContext,
+  Description,
+  getProductId,
+  Image,
+  NotData,
+  setSessionStorage,
+  Title,
+} from './index';
 const ProductDetails = () => {
-  const id = useParams().mobileId;
+  const query = new URLSearchParams(useLocation().search);
+  const id = query.get('id');
   const isMountedRef = useRef(true);
+  const { setCart } = useContext(CartContext);
   const [productDetail, setProductDetail] = useState({});
   const [colorCode, setColor] = useState('');
   const [storageCode, setStorage] = useState('');
-  const [cart, setCart] = useState(() => (getSessionStorage('cart') ? parseInt(getSessionStorage('cart')) : 0));
-
   const { code, model, imgUrl } = productDetail;
 
   useEffect(() => {
@@ -42,16 +44,12 @@ const ProductDetails = () => {
     });
   }, [setCart, id, colorCode, storageCode]);
 
-  return (
-    <div>
-      <Header cart={cart} />
-
-      {code === 0 ? (
-        <NotData>Sorry, at the moment there is no data to display </NotData>
-      ) : (
+  if (code !== 0) {
+    return (
+      <>
         <div className='wrapper'>
           <div className='l-content-wide'>
-            <div className='l-paddingY-48'>
+            <div className='l-paddingY-24'>
               <Title>{model}</Title>
             </div>
             <div className='Card productDetails'>
@@ -72,8 +70,14 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-      )}
-    </div>
-  );
+      </>
+    );
+  } else {
+    return (
+      <NotData button={true} textButton={'Home'}>
+        Sorry, at the moment there is no data to display{' '}
+      </NotData>
+    );
+  }
 };
 export default ProductDetails;

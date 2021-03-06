@@ -1,43 +1,15 @@
 import PropTypes from 'prop-types';
-import React, { Fragment, useEffect, useState } from 'react';
-import { Subtitle } from './Subtitle';
+import React, { useEffect, useState } from 'react';
+import { setTitleDescription, Subtitle } from './index';
 
 export const Description = React.memo(({ description }) => {
   const [descriptionValue, setDescriptionValue] = useState([]);
-
   useEffect(() => {
-    const keyArray = [
-      'brand',
-      'model',
-      'price',
-      'cpu',
-      'ram',
-      'os',
-      'displayResolution',
-      'battery',
-      'primaryCamera',
-      'secondaryCmera',
-      'dimentions',
-      'weight',
-    ];
-
-    let descriptionArray = [];
-
-    Object.keys(description).forEach((key) => {
-      keyArray.filter((item) => {
-        if (item === key) {
-          descriptionArray = [
-            ...descriptionArray,
-            { id: key.charAt(0).toUpperCase() + key.slice(1), value: description[key] },
-          ];
-        }
-        return setDescriptionValue(descriptionArray);
-      });
-    });
+    setDescriptionValue(setTitleDescription(description));
   }, [description]);
 
   return (
-    <Fragment>
+    <>
       <Subtitle>Characteristics:</Subtitle>
       <ul className='color-dark-100 l-marginBottom-24 font-m'>
         {descriptionValue.map(({ id, value }) => (
@@ -47,7 +19,7 @@ export const Description = React.memo(({ description }) => {
           </li>
         ))}
       </ul>
-    </Fragment>
+    </>
   );
 });
 

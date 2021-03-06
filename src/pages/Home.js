@@ -1,33 +1,44 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ItemList } from '../component/ItemList';
-import { localStorageList } from '../utils/localStorage';
-import { Header } from './../component/Header';
-import { getSessionStorage } from './../utils/sessionStorage';
-
+import { ItemList, localStorageList, Search } from './index';
 export const Home = () => {
-  const cartItems = getSessionStorage('cart') ? getSessionStorage('cart') : 0;
+  const isMountedRef = useRef(true);
+  const [valueSearch, setValueSearch] = useState('');
   const [list, setList] = useState([]);
-  const isMountedRef = useRef(null);
+  const [filterList, setFilterList] = useState([]);
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   useEffect(() => {
-    isMountedRef.current = true;
     localStorageList().then((productList) => {
       if (isMountedRef.current) {
         setList(productList);
       }
     });
-
-    return () => (isMountedRef.current = false);
   }, []);
 
+  useEffect(() => {
+    setFilterList(
+      list.filter(
+        ({ brand, model }) =>
+          brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
+          model.toLowerCase().includes(valueSearch.toLocaleLowerCase()),
+      ),
+    );
+  }, [valueSearch, list]);
+
   return (
-    <div>
-      <Header cart={cartItems} />
+    <>
       <div className='wrapper'>
-        <div className='l-paddingY-48'>
-          <ItemList list={list} />
+        <div className='l-content-wide'>
+          <div className='l-paddingY-48'>
+            <Search setValueSearch={setValueSearch} />
+            <ItemList list={filterList} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
