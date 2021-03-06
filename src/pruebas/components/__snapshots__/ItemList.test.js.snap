@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Search component should be render a component 1`] = `
+<NotData
+  button={false}
+>
+  Sorry, at the moment there is no data to display 
+</NotData>
+`;

@@ -9,6 +9,7 @@ import { CartContext } from '../useContext/CartContext';
 import { localStorageList } from '../utils/localStorage';
 import { NotData } from './../component/NotData';
 import { Search } from './../component/Search';
+import { Subtitle } from './../component/Subtitle';
 import { Title } from './../component/Title';
 import { setSessionStorage } from './../utils/sessionStorage';
 export {
@@ -25,4 +26,5 @@ export {
   Title,
   setSessionStorage,
   Search,
+  Subtitle,
 };

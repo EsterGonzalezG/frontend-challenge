@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Image component should be render a component 1`] = `
+<div
+  className="notFount"
+>
+  <span
+    className="notFount-icon"
+  >
+    <FaRegGrimace />
+  </span>
+  <div
+    className="notFount-text l-marginBottom-24"
+  >
+    Home
+  </div>
+  <ButtonBackToHome>
+    Home
+  </ButtonBackToHome>
+</div>
+`;

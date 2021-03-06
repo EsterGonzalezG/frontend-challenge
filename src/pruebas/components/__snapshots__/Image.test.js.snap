@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Image component should be render a component 1`] = `
+<img
+  alt="Mobile model"
+  loading="lazy"
+  src="https://localhost/imagen.jpg"
+/>
+`;

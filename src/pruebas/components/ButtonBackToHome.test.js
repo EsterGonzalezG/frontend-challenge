@@ -1,16 +1,16 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { ButtonBackToHome } from './../../component/ButtonBackToHome';
+import { ButtonBackToHome } from '../../component/ButtonBackToHome';
 
 describe('Test Title component', () => {
+  const text = 'list';
+  const wrapper = shallow(<ButtonBackToHome> {text}</ButtonBackToHome>);
   test('should be render a component', () => {
-    const text = 'list';
-    const wrapper = shallow(<ButtonBackToHome> {text}</ButtonBackToHome>);
+    expect(wrapper).toMatchSnapshot();
+  });
+  test('should be a button with text', () => {
     const button = wrapper.find('Link');
     const textShow = button.text().trim();
-
-    console.log(window.location.pathname);
-    expect(wrapper).toMatchSnapshot();
     expect(textShow).toBe(text);
   });
 });

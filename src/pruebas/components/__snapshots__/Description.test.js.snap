@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Image component should be render a component 1`] = `
+<ul
+  className="color-dark-100 l-marginBottom-24 font-m"
+/>
+`;
