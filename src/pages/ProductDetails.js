@@ -1,14 +1,16 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Actions } from '../component/Actions';
-import { Description } from '../component/Description';
-import { Image } from '../component/Image';
-import { addProducts } from '../services/addProducts';
-import { getProductId } from '../services/getProducts';
-import { CartContext } from '../useContext/CartContext';
-import { NotData } from './../component/NotData';
-import { Title } from './../component/Title';
-import { setSessionStorage } from './../utils/sessionStorage';
+import {
+  Actions,
+  addProducts,
+  CartContext,
+  Description,
+  getProductId,
+  Image,
+  NotData,
+  setSessionStorage,
+  Title,
+} from './index';
 const ProductDetails = () => {
   const query = new URLSearchParams(useLocation().search);
   const id = query.get('id');
@@ -42,11 +44,9 @@ const ProductDetails = () => {
     });
   }, [setCart, id, colorCode, storageCode]);
 
-  return (
-    <div>
-      {code === 0 ? (
-        <NotData>Sorry, at the moment there is no data to display </NotData>
-      ) : (
+  if (code !== 0) {
+    return (
+      <>
         <div className='wrapper'>
           <div className='l-content-wide'>
             <div className='l-paddingY-48'>
@@ -70,8 +70,14 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-      )}
-    </div>
-  );
+      </>
+    );
+  } else {
+    return (
+      <NotData button={true} textButton={'Home'}>
+        Sorry, at the moment there is no data to display{' '}
+      </NotData>
+    );
+  }
 };
 export default ProductDetails;
