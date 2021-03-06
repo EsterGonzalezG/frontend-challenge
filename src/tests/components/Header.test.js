@@ -1,10 +1,9 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Description } from './../../component/Description';
+import { Header } from '../../component/Header';
 
 describe('Test Image component', () => {
-  const description = [{}];
-  const wrapper = shallow(<Description description={description} />);
+  const wrapper = shallow(<Header />);
 
   test('should be render a component', () => {
     expect(wrapper).toMatchSnapshot();

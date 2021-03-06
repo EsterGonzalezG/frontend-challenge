@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { NotData } from './../../component/NotData';
+import { NotData } from '../../component/NotData';
 
 describe('Test Image component', () => {
   const button = true;

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Select } from './../../component/Select';
+import { Select } from '../../component/Select';
 
 describe('Test Search component', () => {
   const setOptionsValue = jest.fn();
