@@ -49,7 +49,7 @@ const ProductDetails = () => {
       <>
         <div className='wrapper'>
           <div className='l-content-wide'>
-            <div className='l-paddingY-48'>
+            <div className='l-paddingY-24'>
               <Title>{model}</Title>
             </div>
             <div className='Card productDetails'>
