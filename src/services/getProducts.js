@@ -14,6 +14,7 @@ export const getProductId = async (id) => {
   try {
     const response = await fetch(endpointProducts + id);
     const data = await response.json();
+    console.log(data);
     return data;
   } catch (error) {
     throw error;
