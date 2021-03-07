@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ButtonBackToHome component should be render a component 1`] = `
+<Link
+  className="Button Button--secondary "
+  to="/"
+>
+   
+  list
+</Link>
+`;

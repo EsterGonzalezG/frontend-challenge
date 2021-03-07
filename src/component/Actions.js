@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import React, { useEffect } from 'react';
-import { ButtonBackToHome, Select, Subtitle } from './index';
+import { ButtonBackToHome, Select } from './index';
 
 export const Actions = React.memo(({ product, setColor, setStorage, addProductCart }) => {
   useEffect(() => {
@@ -15,8 +15,7 @@ export const Actions = React.memo(({ product, setColor, setStorage, addProductCa
   };
 
   return (
-    <form onSubmit={handleSubmit} className='l-paddingY-24'>
-      <Subtitle>Select:</Subtitle>
+    <form onSubmit={handleSubmit}>
       <label className='actions-label l-flexCenterAround l-marginBottom-24'>
         <Select options={product?.options?.colors} name='Color' setOptionsValue={setColor} />
         <Select options={product?.options?.storages} name='Storage' setOptionsValue={setStorage} />

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Title component should be render a component 1`] = `
+<h1
+  className="title"
+>
+   
+  MobileShop
+</h1>
+`;

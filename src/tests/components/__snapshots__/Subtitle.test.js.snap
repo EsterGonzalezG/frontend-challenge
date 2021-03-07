@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Subtitle component should be render a component 1`] = `
+<h3
+  className="font-m color-dark-100 l-marginBottom-16"
+>
+   
+  MobileShop
+</h3>
+`;

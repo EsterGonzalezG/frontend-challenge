@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Actions component should be render a component 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label
+    className="actions-label l-flexCenterAround l-marginBottom-24"
+  >
+    <Memo()
+      name="Color"
+      setOptionsValue={[MockFunction]}
+    />
+    <Memo()
+      name="Storage"
+      setOptionsValue={[MockFunction]}
+    />
+  </label>
+  <div
+    className="l-flexCenterAround"
+  >
+    <button
+      className="Button Button--primary"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Add
+    </button>
+    <ButtonBackToHome>
+      List
+    </ButtonBackToHome>
+  </div>
+</form>
+`;

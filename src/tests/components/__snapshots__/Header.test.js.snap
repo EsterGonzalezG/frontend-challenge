@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Header component should be render a component 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header-content"
+  >
+    <div
+      className="l-flexAlignCenter l-marginBottom-16"
+    >
+      <span
+        className="header-icon"
+      >
+        <SiDsautomobiles />
+      </span>
+      <Memo()>
+        ShopMobile
+      </Memo()>
+    </div>
+    <Memo() />
+  </div>
+  <ItemCard />
+</div>
+`;

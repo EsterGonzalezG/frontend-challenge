@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Search component should be render a component 1`] = `
+<form
+  className="l-marginBottom-36 l-flex-justifyEnd"
+  onSubmit={[Function]}
+>
+  <label
+    htmlFor="search"
+  />
+  <input
+    className="Input"
+    id="search"
+    onChange={[Function]}
+    placeholder="Mobile to search..."
+    type="text"
+  />
+</form>
+`;
