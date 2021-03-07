@@ -23,8 +23,8 @@ export const Home = () => {
     setFilterList(
       list?.data?.filter(
         ({ brand, model }) =>
-          brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
-          model.toLowerCase().includes(valueSearch.toLocaleLowerCase()),
+          brand.toLowerCase().includes(valueSearch.toLocaleLowerCase().trim()) ||
+          model.toLowerCase().includes(valueSearch.toLocaleLowerCase().trim()),
       ),
     );
   }, [valueSearch, list.data]);
