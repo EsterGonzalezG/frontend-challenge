@@ -3,7 +3,7 @@ import { ItemList, localStorageList, Search } from './index';
 export const Home = () => {
   const isMountedRef = useRef(true);
   const [valueSearch, setValueSearch] = useState('');
-  const [list, setList] = useState([]);
+  const [list, setList] = useState({ data: [], loading: true });
   const [filterList, setFilterList] = useState([]);
   useEffect(() => {
     return () => {
@@ -14,31 +14,29 @@ export const Home = () => {
   useEffect(() => {
     localStorageList().then((productList) => {
       if (isMountedRef.current) {
-        setList(productList);
+        setList({ data: productList, loading: false });
       }
     });
   }, []);
 
   useEffect(() => {
     setFilterList(
-      list.filter(
+      list?.data?.filter(
         ({ brand, model }) =>
           brand.toLowerCase().includes(valueSearch.toLocaleLowerCase()) ||
           model.toLowerCase().includes(valueSearch.toLocaleLowerCase()),
       ),
     );
-  }, [valueSearch, list]);
+  }, [valueSearch, list.data]);
 
   return (
-    <>
-      <div className='wrapper'>
-        <div className='l-content-wide'>
-          <div className='l-paddingY-48'>
-            <Search setValueSearch={setValueSearch} />
-            <ItemList list={filterList} />
-          </div>
+    <div className='wrapper'>
+      <div className='l-content-wide'>
+        <div className='l-paddingY-48'>
+          <Search setValueSearch={setValueSearch} />
+          <ItemList list={filterList} loading={list.loading} />
         </div>
       </div>
-    </>
+    </div>
   );
 };

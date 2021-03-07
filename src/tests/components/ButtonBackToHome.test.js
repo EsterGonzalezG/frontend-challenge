@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { ButtonBackToHome } from '../../component/ButtonBackToHome';
 
-describe('Test Title component', () => {
+describe('Test ButtonBackToHome component', () => {
   const text = 'list';
   const wrapper = shallow(<ButtonBackToHome> {text}</ButtonBackToHome>);
   test('should be render a component', () => {

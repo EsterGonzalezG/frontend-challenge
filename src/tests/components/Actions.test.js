@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { Actions } from '../../component/Actions';
 
-describe('Test Search component', () => {
+describe('Test Actions component', () => {
   const setColor = jest.fn();
   const setStorage = jest.fn();
   const addProductCart = jest.fn();

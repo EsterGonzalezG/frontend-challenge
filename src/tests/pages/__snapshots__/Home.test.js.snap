@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Home page should be render a component 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="l-content-wide"
+  >
+    <div
+      className="l-paddingY-48"
+    >
+      <form
+        className="l-marginBottom-36 l-flex-justifyEnd"
+        onSubmit={[Function]}
+      >
+        <label
+          htmlFor="search"
+        />
+        <input
+          className="Input"
+          id="search"
+          onChange={[Function]}
+          placeholder="Mobile to search..."
+          type="text"
+        />
+      </form>
+      <div>
+        LOADING...
+      </div>
+    </div>
+  </div>
+</div>
+`;

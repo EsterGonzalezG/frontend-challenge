@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ProductDetails page should be render a component 1`] = `<ProductDetails />`;
+
+exports[`Test ProductDetails page should be render a component 2`] = `<ProductDetails />`;

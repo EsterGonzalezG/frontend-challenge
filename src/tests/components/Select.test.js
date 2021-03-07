@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { Select } from '../../component/Select';
 
-describe('Test Search component', () => {
+describe('Test Select component', () => {
   const setOptionsValue = jest.fn();
   const options = ['option 1', 'option 2'];
   const name = 'color';

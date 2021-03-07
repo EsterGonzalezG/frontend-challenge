@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { NotData } from '../../component/NotData';
 
-describe('Test Image component', () => {
+describe('Test NotData component', () => {
   const button = true;
   const text = 'Home';
   const wrapper = shallow(

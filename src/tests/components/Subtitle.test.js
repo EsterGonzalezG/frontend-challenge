@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { Subtitle } from './../../component/Subtitle';
 
-describe('Test Title component', () => {
+describe('Test Subtitle component', () => {
   const subtitle = 'MobileShop';
   const wrapper = shallow(<Subtitle> {subtitle}</Subtitle>);
   test('should be render a component', () => {

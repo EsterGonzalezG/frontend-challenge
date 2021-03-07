@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { Description } from '../../component/Description';
 
-describe('Test Image component', () => {
+describe('Test Description component', () => {
   const description = [{}];
   const wrapper = shallow(<Description description={description} />);
 

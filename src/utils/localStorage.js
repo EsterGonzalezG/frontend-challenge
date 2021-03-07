@@ -1,14 +1,14 @@
 import { getProductList } from '../services/getProducts';
 
-function getLocalStorage(key) {
+export function getLocalStorage(key) {
   try {
-    return JSON.parse(localStorage.getItem(key));
+    return localStorage.getItem(key);
   } catch (error) {
     throw error;
   }
 }
 
-function setLocalStorage(key, initialValue) {
+export function setLocalStorage(key, initialValue) {
   try {
     return localStorage.setItem(key, JSON.stringify(initialValue));
   } catch (error) {
@@ -16,12 +16,12 @@ function setLocalStorage(key, initialValue) {
   }
 }
 
-function getExpirationDate() {
+export function getExpirationDate() {
   const oneHour = 3600 * 1000;
   return Date.now() + oneHour;
 }
 
-async function cacheData() {
+export async function cacheData() {
   const products = await getProductList();
   setLocalStorage('list', products);
   setLocalStorage('expired', getExpirationDate());
@@ -30,8 +30,8 @@ async function cacheData() {
 
 export const localStorageList = async () => {
   const now = Date.now(); //milliseconds
-  const requestHours = parseInt(getLocalStorage('expired'));
-  const storedList = getLocalStorage('list');
+  const requestHours = parseInt(JSON.parse(getLocalStorage('expired')));
+  const storedList = JSON.parse(getLocalStorage('list'));
   let dataToReturn;
 
   if (storedList && now < requestHours) {
