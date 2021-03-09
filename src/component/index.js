@@ -3,7 +3,7 @@ import { CartContext } from './../useContext/CartContext';
 import { Breadcrumbs } from './Breadcrumbs';
 import { ButtonBackToHome } from './ButtonBackToHome';
 import { Image } from './Image';
-import { ItemCard } from './ItemCart';
+import { ItemCart } from './ItemCart';
 import { NotData } from './NotData';
 import { Search } from './Search';
 import { Select } from './Select';
@@ -13,7 +13,7 @@ export {
   ButtonBackToHome,
   Select,
   Breadcrumbs,
-  ItemCard,
+  ItemCart,
   Image,
   Search,
   CartContext,

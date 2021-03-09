@@ -1,6 +1,6 @@
 import React from 'react';
 import { SiDsautomobiles } from 'react-icons/si';
-import { Breadcrumbs, ItemCard, Title } from './index';
+import { Breadcrumbs, ItemCart, Title } from './index';
 
 export const Header = () => {
   return (
@@ -14,7 +14,7 @@ export const Header = () => {
         </div>
         <Breadcrumbs />
       </div>
-      <ItemCard />
+      <ItemCart />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BiCartAlt } from 'react-icons/bi';
 import { CartContext } from './index';
 
-export const ItemCard = () => {
+export const ItemCart = () => {
   const { cart } = useContext(CartContext);
 
   return (
